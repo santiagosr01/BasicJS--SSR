@@ -8,5 +8,5 @@ if (edad >= 18) {
   console.log(nombre + ", ya puedes conducir. Rotonda sin fuente, rotonda de frente");
 } else {
   console.log(nombre + ", aun no puedes conducir chavalin");
-};
+}
 

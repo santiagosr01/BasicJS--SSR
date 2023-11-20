@@ -1,21 +1,21 @@
 const pt = require("prompt-sync")({sigint: true})
 
-var suma = 0;
+let esCancelar = false
+let numInput
+let num
+let suma= 0
 
-  while (true) {
-    var input = pt("Ingresa un número (o escribe 'cancelar' para finalizar):");
 
-    if (input.toLowerCase() === "cancelar") {
-      break;  
-    }
+  while (!esCancelar) {
+    numInput = pt("Ingresa un número (o escribe 'cancelar' para finalizar):");
 
-    var numero = parseFloat(input);
-
-    if (isNaN(numero)) {
-      console.log("No entendido. Ingresa un número válido.");
+    if (Number(numInput)){
+      sum = Number(numInput)
+      suma += num
+    } else if (numInput !=='cancelar'){
+      console.log('Introduce un número valido')
     } else {
-      suma += numero;
+      esCancelar = true
     }
   }
-
   console.log("La suma total de los números introducidos es: " + suma);
