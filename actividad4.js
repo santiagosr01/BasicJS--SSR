@@ -1,17 +1,18 @@
 const pt = require("prompt-sync")({sigint: true})
 
-var cadenas = [];
+let cadenaInput = pt("Introduce un texto -> ")
+let palabra
+let cadena =""
 
-while (true) {
-  var input = pt("Ingresa una cadena de texto (o escribe 'cancelar' para finalizar):");
 
-  if (input.toLowerCase() === "cancelar") {
-    break;  
+  while (cadenaInput != "cancelar") {
+  
+    if (String(cadenaInput)) {
+      palabra = String(cadenaInput)
+      cadena = (cadena + palabra+ "-")
+    }  else {
+      console.log('Solo se aceptan valores alfabeticos');
+    }
+    cadenaInput = pt("Introduce un texto -> ")
   }
-
-  cadenas.push(input);
-}
-
-var resultado = cadenas.join('-');
-
-console.log("Cadenas concatenadas: " + resultado);
+  console.log("La cadena introducida es: " + cadena);
